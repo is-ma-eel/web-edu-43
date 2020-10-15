@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
+import './components/layout/WelcomePage';
+import WelcomePage from './components/layout/WelcomePage';
 
 function App() {
   return (
-    <div>
-      <h1>We can now deploy our app</h1>
-    </div>
+    <>
+      <main className="container">
+        <WelcomePage />
+      </main>
+    </>
   );
 }
 export default App;
