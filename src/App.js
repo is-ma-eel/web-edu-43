@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import './components/layout/WelcomePage';
 import WelcomePage from './components/layout/WelcomePage';
+
+import CreateRoutes from './MainRouters';
 
 function App() {
   return (
-    <>
-      <main className="container">
-        <WelcomePage />
-      </main>
-    </>
+    <CreateRoutes>
+      <WelcomePage />
+    </CreateRoutes>
   );
 }
 export default App;
