@@ -1,10 +1,12 @@
+// jshint esversion: 6
 import React from 'react';
 import './App.css';
+import TeacherDashboard from './components/Dashboards/TeacherDasboard';
 
 function App() {
   return (
     <div>
-      <h1>We can now deploy our app</h1>
+      <TeacherDashboard/>
     </div>
   );
 }
