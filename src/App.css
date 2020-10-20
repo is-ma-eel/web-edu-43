@@ -1,3 +1,19 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Crimson+Text:wght@400;600&display=swap');
+
+body {
+  font-family: 'Cabin', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Crimson Text', serif;
+}
+
 .App {
   text-align: center;
 }
