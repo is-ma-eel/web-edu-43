@@ -1,15 +1,28 @@
 //All application routes go here
-import React from "react";
-import { Router, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+// pages
+import WelcomePage from './components/layout/WelcomePage';
+import SignUp from './components/auth/SignUp';
+import SignIn from './components/auth/SignIn';
 
-const createRoutes = () => 
-    (
-        <Router>
-            <Route>
-                 {/* /*componets rendered here*/ }
-            </Route>
-        </Router>
-    );
+const CreateRoutes = () => (
+  <Router>
+    <main className="container">
+      <Switch>
+        <Route exact path="/">
+          <WelcomePage />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/signin">
+          <SignIn />
+        </Route>
+      </Switch>
+    </main>
+  </Router>
+);
 
-export default createRoutes;
+export default CreateRoutes;
