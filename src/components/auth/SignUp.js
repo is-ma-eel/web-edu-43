@@ -3,7 +3,7 @@ import Navbar from '../layout/Navbar';
 import WelcomePage from '../layout/WelcomePage';
 import Footer from '../layout/Footer';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 // styles
 import './Form.css';
@@ -11,11 +11,22 @@ import './Form.css';
 import { useForm } from 'react-hook-form';
 
 const SignUp = () => {
+  // routing part
+  let history = useHistory();
+
   // intialize hook
-  const { register, handleSubmit, errors, getValues, reset } = useForm({ mode: 'all' });
+  const { register, handleSubmit, errors, getValues, reset } = useForm({
+    mode: 'all',
+    defaultValues: { email: 'dwight@gmail.com', password: 123456789, confirm: 123456789 }
+  });
 
   const onSubmit = data => {
     console.log(data);
+    if (data.signup_type === 'teacher_signup') {
+      history.push('/teacherdashboard');
+    } else if (data.signup_type === 'student_signup') {
+      history.push('/studentdashboard');
+    }
     reset();
   };
 
@@ -87,23 +98,23 @@ const SignUp = () => {
           <div className="form-row">
             <input
               type="radio"
-              name="signup-type"
-              id="teacher-signup"
-              value="teacher-signup"
+              name="signup_type"
+              id="teacher_signup"
+              value="teacher_signup"
               defaultChecked
               ref={register}
             />
-            <label htmlFor="teacher-signup">Teacher sign up</label>
+            <label htmlFor="teacher_signup">Teacher sign up</label>
             <br />
 
             <input
               type="radio"
-              name="signup-type"
-              id="student-signup"
-              value="student-signup"
+              name="signup_type"
+              id="student_signup"
+              value="student_signup"
               ref={register}
             />
-            <label htmlFor="student-signup">Student sign up</label>
+            <label htmlFor="student_signup">Student sign up</label>
             <br />
           </div>
 

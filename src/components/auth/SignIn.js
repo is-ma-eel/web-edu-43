@@ -12,7 +12,10 @@ import { useForm } from 'react-hook-form';
 
 const SignIn = () => {
   // intialize hook
-  const { register, handleSubmit, errors, reset } = useForm({ mode: 'all' });
+  const { register, handleSubmit, errors, reset } = useForm({
+    mode: 'all',
+    defaultValues: { email: 'dwight@gmail.com', password: 123456789 }
+  });
 
   const onSubmit = data => {
     console.log(data);

@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import WelcomePage from './components/layout/WelcomePage';
 import SignUp from './components/auth/SignUp';
 import SignIn from './components/auth/SignIn';
+import TeacherDashboard from './components/Dashboards/TeacherDasboard';
+import StudentDashboard from './components/Dashboards/StudentDashboard';
 
 const CreateRoutes = () => (
   <Router>
@@ -19,6 +21,12 @@ const CreateRoutes = () => (
         </Route>
         <Route path="/signin">
           <SignIn />
+        </Route>
+        <Route path="/teacherdashboard">
+          <TeacherDashboard />
+        </Route>
+        <Route path="/studentdashboard">
+          <StudentDashboard />
         </Route>
       </Switch>
     </main>
