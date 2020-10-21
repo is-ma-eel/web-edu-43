@@ -2,13 +2,12 @@ import React from 'react';
 import Navbar from '../layout/Navbar';
 import WelcomePage from '../layout/WelcomePage';
 import Footer from '../layout/Footer';
-
+import { useForm } from 'react-hook-form';
 import { Link, useHistory } from 'react-router-dom';
 
 // styles
 import './Form.css';
 
-import { useForm } from 'react-hook-form';
 
 const SignUp = () => {
   // routing part

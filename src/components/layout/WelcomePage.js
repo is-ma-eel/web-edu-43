@@ -13,28 +13,30 @@ const WelcomePage = () => {
 
   return (
     <>
-      <section className="container">
-        <h1 className="main-heading">ASSIGNMENT</h1>
-        <p>Submit your assignment</p>
-        <p>Get feedback</p>
-        {/* image attribute for free use */}
-        {/* <a href="http://www.freepik.com">Designed by pch.vector / Freepik</a> */}
+      <section className="container text-center py-5">
+        <h1 className="main-heading text-center">ASSIGNMENT</h1>
+        <h4 className="sub-heading">Submit your assignment</h4>
+        <h4 className="sub-heading">Get feedback</h4>
+        {/* image attribute for free use 
+         <a href="http://www.freepik.com">Designed by pch.vector / Freepik</a> */}
         <img
           className="welcome-img"
           src={welcome_image}
           alt="two people commnuicate with thier computers"
         />
         <p>
-          A platform on which students can submit their assignment for their teachers to grade them
-          and give feedback.
+          The best platform to upload your assignments with ease and get quick review from your teachers.        
+          You can review your students' assignments with ease and give feedback.
         </p>
+          
+        
       </section>
       {/* add sign up & sign in only if we are in welcome page*/}
       {location.pathname === '/' && (
-        <>
-          <Link to="/signup">Sign up</Link>
-          <Link to="/signin">Sign in</Link>
-        </>
+        <div className="sign">
+          <Link to="/signup" className="sign-up btn btn-secondary btn-lg">Sign up</Link>
+          <Link to="/signin" className="sign-in btn btn-default btn-lg">Sign in</Link>
+        </div>
       )}
     </>
   );
