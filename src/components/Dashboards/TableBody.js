@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // jshint esversion: 6
+=======
+>>>>>>> 5a1d5f37209827e0701877234881158b47b20dc9
 import React from 'react';
 
 const TableBody = (props) => {
@@ -22,4 +25,8 @@ const TableBody = (props) => {
   );
 }
 
+<<<<<<< HEAD
 export default TableBody;
+=======
+export default TableBody;
+>>>>>>> 5a1d5f37209827e0701877234881158b47b20dc9
