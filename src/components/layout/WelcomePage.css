@@ -1,5 +1,8 @@
 .container{
   font-size: 1.1em;
+}
+
+.welcome-page{
   width: 80%;
 }
 
@@ -21,12 +24,12 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 10%;
+  /* bottom: 10%; */
 }
 
 .sign-up, .sign-in{
   border: 1px solid #444444;
-  padding: 7px 20px;
+  padding: 6px 20px;
   margin: 0 70px;
   border-radius: 0;
   letter-spacing: 2px;

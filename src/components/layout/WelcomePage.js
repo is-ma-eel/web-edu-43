@@ -13,7 +13,7 @@ const WelcomePage = () => {
 
   return (
     <>
-      <section className="container text-center py-5">
+      <section className="container welcome-page text-center py-5">
         <h1 className="main-heading text-center">ASSIGNMENT</h1>
         <h4 className="sub-heading">Submit your assignment</h4>
         <h4 className="sub-heading">Get feedback</h4>
@@ -27,9 +27,7 @@ const WelcomePage = () => {
         <p>
           The best platform to upload your assignments with ease and get quick review from your teachers.        
           You can review your students' assignments with ease and give feedback.
-        </p>
-          
-        
+        </p>        
       </section>
       {/* add sign up & sign in only if we are in welcome page*/}
       {location.pathname === '/' && (

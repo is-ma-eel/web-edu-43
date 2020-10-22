@@ -1,3 +1,7 @@
 .error {
   color: #c23636;
 }
+
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
