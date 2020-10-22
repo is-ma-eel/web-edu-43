@@ -1,36 +1,37 @@
-.container{
+.container {
   font-size: 1.1em;
 }
 
-.welcome-page{
-  width: 80%;
+.welcome-page {
+  /* width: 80%; */
 }
 
 .welcome-img {
-  width: 800px;
+  /* width: 800px; */
 }
 
-.main-heading{
+.main-heading {
   font-size: 3.4em;
   letter-spacing: 3px;
   font-weight: 600;
 }
 
-.sub-heading{
+.sub-heading {
   color: rgb(90, 90, 90);
 }
 
-.sign{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.sign {
+  /* position: absolute; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
   /* bottom: 10%; */
 }
 
-.sign-up, .sign-in{
+.sign-up,
+.sign-in {
   border: 1px solid #444444;
   padding: 6px 20px;
-  margin: 0 70px;
+  /* margin: 0 70px; */
   border-radius: 0;
   letter-spacing: 2px;
 }

@@ -11,7 +11,7 @@ import StudentDashboard from './components/Dashboards/StudentDashboard';
 
 const CreateRoutes = () => (
   <Router>
-    <main className="container">
+    <main className="container col-md-8 offset-md-2">
       <Switch>
         <Route exact path="/">
           <WelcomePage />
