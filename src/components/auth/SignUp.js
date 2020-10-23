@@ -37,13 +37,30 @@ const SignUp = () => {
         <h2> Sign up</h2>
 
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-row">
+            <span className="required-style">* </span>
+            <input
+              aria-label="Full Name"
+              aria-required="true"
+              placeholder="Full Name"
+              className="form-text form-control"
+              type="text"
+              name="name"
+              autoFocus
+              ref={register({
+                required: 'Full Name required'
+              })}
+            />
+            {errors.email && <p className="error">{errors.email.message}</p>}
+          </div>
+          
           <div className="form-row">
             <span className="required-style">* </span>
             <input
               aria-label="Enter your email"
               aria-required="true"
               placeholder="Email"
-              className="form-text"
+              className="form-text form-control"
               type="email"
               name="email"
               autoFocus
@@ -60,7 +77,7 @@ const SignUp = () => {
               aria-label="Enter your password"
               aria-required="true"
               placeholder="Password"
-              className="form-text"
+              className="form-text form-control"
               type="password"
               name="password"
               ref={register({
@@ -77,7 +94,7 @@ const SignUp = () => {
               aria-label="Enter your password to confirm"
               aria-required="true"
               placeholder="Confirm Password"
-              className="form-text"
+              className="form-text form-control"
               type="password"
               name="confirm"
               ref={register({
@@ -117,7 +134,7 @@ const SignUp = () => {
             <br />
           </div>
 
-          <button className="sub-btn" type="submit">
+          <button className="sub-btn btn btn-primary" type="submit">
             Sign up
           </button>
 

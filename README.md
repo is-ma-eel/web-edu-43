@@ -16,7 +16,7 @@ The sketch of this project is in public/sketch
 
 # Component Architecture
 
-![alt project wireframe](https://raw.githubusercontent.com/is-ma-eel/web-edu-43/main/Component_Architecture.png)
+![alt project wireframe](https://raw.githubusercontent.com/is-ma-eel/web-edu-43/main/public/sketch/Component_Architecture.png)
 
 # Install the Project
 
