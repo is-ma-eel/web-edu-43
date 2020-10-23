@@ -13,7 +13,7 @@ const WelcomePage = () => {
 
   return (
     <>
-      <section className="container welcome-page text-center py-5">
+      <section className="container welcome-page text-center py-4">
         <h1 className="main-heading d-none d-sm-block text-center">ASSIGNMENT</h1>
         <h1 className="h1 font-weight-bold d-block d-sm-none text-center">ASSIGNMENT</h1>
         <h4 className="sub-heading">Submit your assignment</h4>
@@ -32,7 +32,7 @@ const WelcomePage = () => {
       </section>
       {/* add sign up & sign in only if we are in welcome page*/}
       {location.pathname === '/' && (
-        <div className="d-flex justify-content-around sign">
+        <div className="sign d-flex justify-content-around mb-3">
           <Link to="/signup" className="sign-up btn btn-secondary btn-lg">
             Sign up
           </Link>

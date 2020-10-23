@@ -2,6 +2,14 @@
   color: #c23636;
 }
 
-*{
+* {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sub-btn {
+  border: 1px solid #444444;
+  padding: 6px 20px;
+  border-radius: 0;
+  margin: 10px 0;
+  letter-spacing: 2px;
 }
