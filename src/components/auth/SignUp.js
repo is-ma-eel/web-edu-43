@@ -14,8 +14,7 @@ const SignUp = () => {
 
   // intialize hook
   const { register, handleSubmit, errors, getValues, reset } = useForm({
-    mode: 'all',
-    defaultValues: { email: 'dwight@gmail.com', password: 123456789, confirm: 123456789 }
+    mode: 'all'
   });
 
   const onSubmit = data => {
@@ -52,7 +51,7 @@ const SignUp = () => {
                 })}
               />
             </div>
-            {errors.email && <p className="error">{errors.email.message}</p>}
+            {errors.email && <p className="invalid-field">{errors.email.message}</p>}
           </div>
 
           <div className="form-row">
@@ -71,7 +70,7 @@ const SignUp = () => {
                 })}
               />
             </div>
-            {errors.password && <p className="error">{errors.password.message}</p>}
+            {errors.password && <p className="invalid-field">{errors.password.message}</p>}
           </div>
 
           <div className="form-row">
@@ -87,15 +86,13 @@ const SignUp = () => {
                 ref={register({
                   validate: value =>
                     // value is from confirm and watch will return value from password
-                    value === getValues('password') || (
-                      <span className="error">Password fields don't match</span>
-                    ),
+                    value === getValues('password') || <span>Password fields don't match</span>,
                   required: 'Password required',
                   minLength: { value: 8, message: 'Too short' }
                 })}
               />
             </div>
-            {errors.confirm && <p className="error">{errors.confirm.message}</p>}
+            {errors.confirm && <p className="invalid-field">{errors.confirm.message}</p>}
           </div>
 
           <div className="form-row">

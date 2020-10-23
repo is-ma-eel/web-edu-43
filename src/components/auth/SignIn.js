@@ -46,7 +46,7 @@ const SignIn = () => {
                 })}
               />
             </div>
-            {errors.email && <p className="error">{errors.email.message}</p>}
+            {errors.email && <p className="invalid-field">{errors.email.message}</p>}
           </div>
 
           <div className="form-row">
@@ -64,7 +64,7 @@ const SignIn = () => {
                 })}
               />
             </div>
-            {errors.password && <p className="error">{errors.password.message}</p>}
+            {errors.password && <p className="invalid-field">{errors.password.message}</p>}
           </div>
 
           <button className="sub-btn btn btn-secondary btn-lg" type="submit">
