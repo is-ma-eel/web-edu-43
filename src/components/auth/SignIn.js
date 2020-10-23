@@ -24,9 +24,14 @@ const SignIn = () => {
 
   return (
     <>
+      <div className="main">
+
       <Navbar />
-      {/* <WelcomePage /> */}
-      <section className="form-container mt-5 mb-5 offset-md-3 col-md-6 offset-md-3">
+      <div className="row sign">
+        <section className="col">
+          <WelcomePage />
+        </section>      
+        <section className="col form-container py-4">
         <h2> Sign in</h2>
 
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
@@ -76,7 +81,9 @@ const SignIn = () => {
           </p>
         </form>
       </section>
+      </div>
       <Footer />
+      </div>
     </>
   );
 };

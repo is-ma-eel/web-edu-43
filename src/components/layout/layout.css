@@ -1,26 +1,33 @@
-/*header*/
-nav{
-  background: #ccc;
+*, body, html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/*header*/
+.container-fluid{
+  background: #ccc;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-nav{
+  width: 85%;
+  margin: 0 auto;
+  text-align: left;
+}
 
 /*Footer*/
 footer{
   background: #ccc;
   text-align: center;
   padding: 10px 0;
+  margin-top: -46px;
 }
 
 small {
   margin: 20px 110px;
   justify-content: space-between;
 }
-
-/*
-footer {
-  background-color: gray;
-  height: 20px;
-}
-footer .footer-1 {
-  margin-right: 250px;
-} */
