@@ -25,44 +25,49 @@ const SignIn = () => {
   return (
     <>
       <Navbar />
-      <WelcomePage />
-      <section className="form-container">
+      {/* <WelcomePage /> */}
+      <section className="form-container mt-5 mb-5 offset-md-3 col-md-6 offset-md-3">
         <h2> Sign in</h2>
+
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-row">
             <span className="required-style">* </span>
-            <input
-              aria-label="Enter your email"
-              aria-required="true"
-              placeholder="Email"
-              className="form-text"
-              type="email"
-              name="email"
-              autoFocus
-              ref={register({
-                required: 'Email required'
-              })}
-            />
-            {errors.email && <p className="error">{errors.email.message}</p>}
+            <div class="col">
+              <input
+                aria-label="Enter your email"
+                aria-required="true"
+                placeholder="Email"
+                className="form-text form-control"
+                type="email"
+                name="email"
+                autoFocus
+                ref={register({
+                  required: 'Email required'
+                })}
+              />
+            </div>
+            {errors.email && <p className="invalid-field">{errors.email.message}</p>}
           </div>
 
           <div className="form-row">
             <span className="required-style">* </span>
-            <input
-              aria-label="Enter your password"
-              aria-required="true"
-              placeholder="Password"
-              className="form-text"
-              type="password"
-              name="password"
-              ref={register({
-                required: 'Password required'
-              })}
-            />
-            {errors.password && <p className="error">{errors.password.message}</p>}
+            <div class="col">
+              <input
+                aria-label="Enter your password"
+                aria-required="true"
+                placeholder="Password"
+                className="form-text form-control"
+                type="password"
+                name="password"
+                ref={register({
+                  required: 'Password required'
+                })}
+              />
+            </div>
+            {errors.password && <p className="invalid-field">{errors.password.message}</p>}
           </div>
 
-          <button className="sub-btn" type="submit">
+          <button className="sub-btn btn btn-secondary btn-lg" type="submit">
             Sign in
           </button>
 
