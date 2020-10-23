@@ -82,8 +82,9 @@ const SignIn = () => {
         </form>
       </section>
       </div>
-      <Footer />
       </div>
+      <Footer />
+
     </>
   );
 };
