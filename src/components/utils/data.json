@@ -4,7 +4,41 @@
     "Student's Name": "Jane Doe",
     "Subject": "Mathematics",
     "Submission Date": "17/10/2020",
-    "Add Grade": ""
+    "Add Grade": "",
+    "submission": [
+      {
+        "Id": "12",
+        "Subject": "Mathematics",
+        "Submission Date": "17/10/2020",
+        "message": "I have submit my assignment at this link ......",
+        "attachments": "-"
+      },
+      {
+        "Id": "188",
+        "Subject": "General science ",
+        "Submission Date": "24/10/2020",
+        "message": "I have submit my assignment at this link ......",
+        "attachments": "-"
+      }
+    ],
+    "reviewed": [
+      {
+        "Id": "155",
+        "Subject": "Economic",
+        "Reviewed Date": "17/10/2020",
+        "Grade": "A",
+        "Comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "attachments": "-"
+      },
+      {
+        "Id": "155",
+        "Subject": "Economic",
+        "Reviewed Date": "19/10/2020",
+        "Grade": "C",
+        "Comment": "amet consectetur adipisicing elit.",
+        "attachments": "-"
+      }
+    ]
   },
   {
     "id": "2",
@@ -19,5 +53,5 @@
     "Subject": "Economics",
     "Submission Date": "16/10/2020",
     "Add Grade": ""
-  }  
+  }
 ]
