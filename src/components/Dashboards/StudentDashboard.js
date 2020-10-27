@@ -4,15 +4,19 @@ import Navbar from '../layout/Navbar';
 import dbdata from '../utils/data.json';
 import schema from '../utils/studentSchema.json';
 import Table from './Table';
+import { Link } from 'react-router-dom';
 
 const StudentDashboard = () => {
   console.log(schema);
   return (
     <div>
       <Navbar />
-      <div>
+      <nav className="dashboard-nav d-flex justify-content-between m-3">
         <h3>Submissions</h3>
-      </div>
+        <Link to="/submissionpage" className="sub-btn btn btn-secondary btn-lg">
+          Add Assignment
+        </Link>
+      </nav>
       <div className="container p-2">
         <div className="row">
           <div className="col">

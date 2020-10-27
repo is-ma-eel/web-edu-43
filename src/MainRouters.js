@@ -8,7 +8,7 @@ import SignUp from './components/auth/SignUp';
 import SignIn from './components/auth/SignIn';
 import TeacherDashboard from './components/Dashboards/TeacherDasboard';
 import StudentDashboard from './components/Dashboards/StudentDashboard';
-
+import SubmissionPage from './components/Dashboards/SubmissionPage';
 const CreateRoutes = () => (
   <Router>
     <main className="container col-md-8 offset-md-2">
@@ -27,6 +27,9 @@ const CreateRoutes = () => (
         </Route>
         <Route path="/studentdashboard">
           <StudentDashboard />
+        </Route>
+        <Route path="/submissionpage">
+          <SubmissionPage />
         </Route>
       </Switch>
     </main>
