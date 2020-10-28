@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
 import dbdata from '../utils/data.json';
 import schema from '../utils/schema.json';
 import Table from './Table';
+import {firebaseAuth} from '../auth/provider/AuthProvider';
 
 function TeacherDashboard() {
+
+  const {handleSignout} = useContext(firebaseAuth)
+
   return (
     <div>
       <Navbar />
@@ -16,6 +20,7 @@ function TeacherDashboard() {
         <div className="row">
           <div className="col">
             <Table headers={Object.keys(schema)} rows={dbdata} />
+            <button onClick={handleSignout}>Sign out</button>
           </div>
         </div>
       </div>

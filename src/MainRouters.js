@@ -1,6 +1,7 @@
 //All application routes go here
-import React from 'react';
+import React, {useContext} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { firebaseAuth } from './components/auth/provider/AuthProvider';
 
 // pages
 import WelcomePage from './components/layout/WelcomePage';
@@ -9,8 +10,14 @@ import SignIn from './components/auth/SignIn';
 import TeacherDashboard from './components/Dashboards/TeacherDasboard';
 import StudentDashboard from './components/Dashboards/StudentDashboard';
 
-const CreateRoutes = () => (
-  <Router>
+
+
+const CreateRoutes = () => {
+  const { token } = useContext(firebaseAuth)
+  console.log(token)
+  
+  return (
+    <Router>
     <main className="container col-md-8 offset-md-2">
       <Switch>
         <Route exact path="/">
@@ -22,8 +29,8 @@ const CreateRoutes = () => (
         <Route path="/signin">
           <SignIn />
         </Route>
-        <Route path="/teacherdashboard">
-          <TeacherDashboard />
+        <Route exact path="/teacherdashboard" render={rProps => token === null ? 
+            <SignIn /> : <TeacherDashboard />}>
         </Route>
         <Route path="/studentdashboard">
           <StudentDashboard />
@@ -31,6 +38,8 @@ const CreateRoutes = () => (
       </Switch>
     </main>
   </Router>
-);
+  );
+  
+};
 
 export default CreateRoutes;

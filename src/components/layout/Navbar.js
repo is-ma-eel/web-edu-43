@@ -9,7 +9,7 @@ const Navbar = () => {
       <nav className="container-fluid navbar navbar-expand-lg navbar-light">
           <div className="header-nav row">
             <div className="navbar-header col-8">
-              <span className="navbar-brand">ASSIGNMENT</span>
+              <Link to="/" className="navbar-brand">ASSIGNMENT</Link>
             </div>
             <div className="right col-3">
               <ul className="nav navbar">

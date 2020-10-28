@@ -1,28 +1,51 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Navbar from '../layout/Navbar';
 import WelcomePage from '../layout/WelcomePage';
 import Footer from '../layout/Footer';
 import { useForm } from 'react-hook-form';
 import { Link, useHistory } from 'react-router-dom';
-
+import { firebaseAuth } from './provider/AuthProvider';
+import { withRouter } from 'react-router-dom';
 // styles
 import './Form.css';
 
-const SignUp = () => {
+
+const SignUp = (props) => {
+
+
   // routing part
   let history = useHistory();
 
-  // intialize hook
+  // intialize hook (register replace handlesignup, handlesubmit = inputs, )
   const { register, handleSubmit, errors, getValues, reset } = useForm({
     mode: 'all'
   });
+  const {handleSignup, inputs, setInputs} = useContext(firebaseAuth)
+  // const {handleSignup, inputs, setInputs, errors} = useContext(firebaseAuth)
+
+
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    console.log(inputs)
+    setInputs(prev => ({...prev, [name]: value}))
+  }
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   console.log('handleSubmit')
+  //   //wait to signup 
+  //   await handleSignup()
+  //   //push home
+  //   props.history.push('/')
+  // }
+
 
   const onSubmit = data => {
     console.log(data);
     if (data.signup_type === 'teacher_signup') {
       history.push('/teacherdashboard');
     } else if (data.signup_type === 'student_signup') {
-      history.push('/studentdashboard');
+      props.history.push('/studentdashboard');
     }
     reset();
   };
@@ -37,14 +60,15 @@ const SignUp = () => {
           <WelcomePage />
         </section>
 
-        <section class="col form-container py-4">
+        <section className="col form-container py-4">
           <h2> Sign up</h2>
 
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-row">
                 <span className="required-style">* </span>
-                <div class="col">
+                <div className="col">
                   <input
+                    onChange={handleChange}
                     aria-label="Enter your email"
                     aria-required="true"
                     placeholder="Email"
@@ -62,8 +86,9 @@ const SignUp = () => {
 
               <div className="form-row">
                 <span className="required-style">* </span>
-                <div class="col">
+                <div className="col">
                   <input
+                    onChange={handleChange}
                     aria-label="Enter your password"
                     aria-required="true"
                     placeholder="Password"
@@ -81,7 +106,7 @@ const SignUp = () => {
 
               <div className="form-row">
                 <span className="required-style">* </span>
-                <div class="col">
+                <div className="col">
                   <input
                     aria-label="Enter your password to confirm"
                     aria-required="true"
@@ -102,7 +127,7 @@ const SignUp = () => {
               </div>
 
               <div className="form-row">
-                <div class="form-check">
+                <div className="form-check">
                   <input
                     type="radio"
                     name="signup_type"
@@ -114,7 +139,7 @@ const SignUp = () => {
                   <label htmlFor="teacher_signup"> Teacher sign up</label>
                 </div>
                 <br />
-                <div class="form-check">
+                <div className="form-check">
                   <input
                     type="radio"
                     name="signup_type"
@@ -130,6 +155,7 @@ const SignUp = () => {
               <button className="sub-btn btn btn-secondary btn-lg" type="submit">
                 Sign up
               </button>
+              {errors.length > 0 ? errors.map(error => <p style={{color: 'red'}}>{errors}</p> ) : null}
 
               <p>
                 Already have an account? <Link to="/signin">Log in</Link>
@@ -145,4 +171,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default withRouter(SignUp);
