@@ -52,18 +52,12 @@ const SignUp = (props) => {
 
   return (
     <>
-      <div className="main">
+      {/* <div className="main"> */}
         <Navbar />
-        <div className="row">
-          <section className="col">
-            <WelcomePage />
-          </section>
-
-        <section className="col form-container py-4">
-          <h2> Sign up</h2>
-          <section className="col form-container py-4 mb-3">
+        <div className="row"> 
+            <section className="col"> <WelcomePage /> </section>
+            <section className="col form-container py-4 mb-3">
             <h2> Sign up</h2>
-
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-row">
                 <span className="required-style">* </span>
@@ -85,6 +79,7 @@ const SignUp = (props) => {
                 </div>
                 {errors.email && <p className="invalid-field">{errors.email.message}</p>}
               </div>
+              </div>
 
               <div className="form-row">
                 <span className="required-style">* </span>
@@ -105,6 +100,7 @@ const SignUp = (props) => {
                   />
                 </div>
                 {errors.password && <p className="invalid-field">{errors.password.message}</p>}
+              </div>
               </div>
 
               <div className="form-row">
@@ -128,6 +124,7 @@ const SignUp = (props) => {
                   />
                 </div>
                 {errors.confirm && <p className="invalid-field">{errors.confirm.message}</p>}
+              </div>
               </div>
 
               <div className="form-row">
@@ -167,7 +164,6 @@ const SignUp = (props) => {
             </form>
           </section>
         </div>
-      </div>
 
       <Footer />
     </>
