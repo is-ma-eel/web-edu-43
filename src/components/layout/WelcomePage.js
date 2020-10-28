@@ -32,11 +32,11 @@ const WelcomePage = () => {
       </section>
       {/* add sign up & sign in only if we are in welcome page*/}
       {location.pathname === '/' && (
-        <div className="text-center">
-          <Link to="/signup" className="sign-up btn btn-secondary btn-lg mr-5">
+        <div className="d-flex flex-md-row flex-column justify-content-md-around mb-3">
+          <Link to="/signup" className="sign-up btn btn-secondary btn-lg mb-3">
             Sign up
           </Link>
-          <Link to="/signin" className="sign-in btn btn-default btn-lg ml-5">
+          <Link to="/signin" className="sign-in btn btn-default btn-lg mb-3">
             Sign in
           </Link>
         </div>

@@ -1,0 +1,15 @@
+{
+  "submissionSchema": {
+    "Id": "",
+    "Subject": "",
+    "Submission Date": "",
+    "Edit Submission": ""
+  },
+  "reviewedSchema": {
+    "Id": "",
+    "Subject": "",
+    "Reviewed Date": "",
+    "Grade": "",
+    "Comment": ""
+  }
+}

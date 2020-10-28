@@ -18,7 +18,7 @@ const SignUp = (props) => {
 
   // intialize hook (register replace handlesignup, handlesubmit = inputs, )
   const { register, handleSubmit, errors, getValues, reset } = useForm({
-    mode: 'all'
+    mode: 'all',
   });
   const {handleSignup, inputs, setInputs} = useContext(firebaseAuth)
   // const {handleSignup, inputs, setInputs, errors} = useContext(firebaseAuth)
@@ -40,7 +40,7 @@ const SignUp = (props) => {
   // }
 
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     console.log(data);
     if (data.signup_type === 'teacher_signup') {
       history.push('/teacherdashboard');
@@ -52,21 +52,23 @@ const SignUp = (props) => {
 
   return (
     <>
-    <div className="main">
-
-      <Navbar />
-      <div className="row sign">
-        <section className="col">
-          <WelcomePage />
-        </section>
+      <div className="main">
+        <Navbar />
+        <div className="row">
+          <section className="col">
+            <WelcomePage />
+          </section>
 
         <section className="col form-container py-4">
           <h2> Sign up</h2>
+          <section className="col form-container py-4 mb-3">
+            <h2> Sign up</h2>
 
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-row">
                 <span className="required-style">* </span>
                 <div className="col">
+                <div className="col mb-3">
                   <input
                     onChange={handleChange}
                     aria-label="Enter your email"
@@ -77,7 +79,7 @@ const SignUp = (props) => {
                     name="email"
                     autoFocus
                     ref={register({
-                      required: 'Email required'
+                      required: 'Email required',
                     })}
                   />
                 </div>
@@ -87,6 +89,7 @@ const SignUp = (props) => {
               <div className="form-row">
                 <span className="required-style">* </span>
                 <div className="col">
+                <div className="col mb-3">
                   <input
                     onChange={handleChange}
                     aria-label="Enter your password"
@@ -97,7 +100,7 @@ const SignUp = (props) => {
                     name="password"
                     ref={register({
                       required: 'Password required',
-                      minLength: { value: 8, message: 'Too short, must be at least 8 chars' }
+                      minLength: { value: 8, message: 'Too short, must be at least 8 chars' },
                     })}
                   />
                 </div>
@@ -107,6 +110,7 @@ const SignUp = (props) => {
               <div className="form-row">
                 <span className="required-style">* </span>
                 <div className="col">
+                <div className="col mb-3">
                   <input
                     aria-label="Enter your password to confirm"
                     aria-required="true"
@@ -115,11 +119,11 @@ const SignUp = (props) => {
                     type="password"
                     name="confirm"
                     ref={register({
-                      validate: value =>
+                      validate: (value) =>
                         // value is from confirm and watch will return value from password
                         value === getValues('password') || <span>Password fields don't match</span>,
                       required: 'Password required',
-                      minLength: { value: 8, message: 'Too short' }
+                      minLength: { value: 8, message: 'Too short' },
                     })}
                   />
                 </div>
@@ -162,11 +166,10 @@ const SignUp = (props) => {
               </p>
             </form>
           </section>
-      </div>
+        </div>
       </div>
 
       <Footer />
-
     </>
   );
 };

@@ -18,6 +18,9 @@ const CreateRoutes = () => {
   
   return (
     <Router>
+import SubmissionPage from './components/Dashboards/SubmissionPage';
+const CreateRoutes = () => (
+  <Router>
     <main className="container col-md-8 offset-md-2">
       <Switch>
         <Route exact path="/">
@@ -34,6 +37,9 @@ const CreateRoutes = () => {
         </Route>
         <Route path="/studentdashboard">
           <StudentDashboard />
+        </Route>
+        <Route path="/submissionpage">
+          <SubmissionPage />
         </Route>
       </Switch>
     </main>
