@@ -51,7 +51,7 @@ const SubmissionPage = () => {
               id="upload-file"
               ref={register({
                 validate: {
-                  size: (value) => value[0].size < 200000000 || 'size is big',
+                  size: (value) => value[0].size < 2000000 || 'size is big',
 
                   type: (value) =>
                     value[0].name.includes('.pdf') ||
