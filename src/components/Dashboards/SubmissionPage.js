@@ -27,7 +27,7 @@ const SubmissionPage = () => {
 
       <form className="form col-lg-6" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-row">
-          <div className="col">
+          <div className="col mb-3">
             <textarea
               rows="10"
               aria-label="Enter your assignment and comments"
@@ -43,7 +43,7 @@ const SubmissionPage = () => {
         {/* value[0].type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ||'Upload only .pdf/.docx file'        */}
         {/* type: value => value[0].type === 'application/pdf' || 'Upload only .pdf/.docx file', */}
         <div className="form-row">
-          <div className="col">
+          <div className="col mb-3">
             <input
               className="form-control-file"
               type="file"
